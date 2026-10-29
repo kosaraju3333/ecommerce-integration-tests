@@ -8,6 +8,7 @@ pipeline {
 
     environment {
         BASE_URL = 'https://api-staging.spontansolutions.com'
+        TEST_PRODUCT_SKU = 'DELL-Pro'
     }
 
     stages {
