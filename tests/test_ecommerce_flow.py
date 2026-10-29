@@ -5,7 +5,7 @@ import pytest
 
 BASE_URL = os.getenv(
     "BASE_URL",
-    "https://api-dev.spontansolutions.com"
+    "https://api-staging.spontansolutions.com"
 )
 
 TEST_PRODUCT_SKU = os.getenv(
@@ -103,7 +103,7 @@ def customer_token():
 def test_auth_service_health():
 
     response = httpx.get(
-        f"{AUTH_URL}/health"
+        f"{AUTH_URL}/api/auth/health"
     )
 
     assert response.status_code == 200
@@ -113,7 +113,7 @@ def test_auth_service_health():
 def test_product_service_health():
 
     response = httpx.get(
-        f"{PRODUCT_URL}/health"
+        f"{PRODUCT_URL}/api/products/health"
     )
 
     assert response.status_code == 200
@@ -123,7 +123,7 @@ def test_product_service_health():
 def test_cart_service_health():
 
     response = httpx.get(
-        f"{CART_URL}/health"
+        f"{CART_URL}/api/cart/health"
     )
 
     assert response.status_code == 200
@@ -133,7 +133,7 @@ def test_cart_service_health():
 def test_order_service_health():
 
     response = httpx.get(
-        f"{ORDER_URL}/health"
+        f"{ORDER_URL}/api/orders/health"
     )
 
     assert response.status_code == 200
